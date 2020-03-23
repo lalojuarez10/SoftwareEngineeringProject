@@ -1,4 +1,4 @@
-# SoftwareEngineeringProject
+# Software Engineering Project
 
 E-Commerce website built using the MERN (MongoDB, Express, ReactJS, and NodeJS).  
 
