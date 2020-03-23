@@ -10,7 +10,8 @@ import {
   Button,
   Modal,
   ModalHeader,
-  ModalBody
+  ModalBody,
+  Label
 } from 'reactstrap';
 import {
   CSSTransition,
@@ -49,6 +50,8 @@ class CheckoutModal extends Component {
 
   render() {
     const { items } = this.props.item;
+    const { user } = this.props.user;
+
 
     return (
       <Container>
@@ -65,7 +68,8 @@ class CheckoutModal extends Component {
         >
           <ModalHeader toggle={this.toggle}> Checkout</ModalHeader>
           <ModalBody>
-            Review Items
+            <Label> Review Items</Label>
+
             <ListGroup>
               <TransitionGroup className="checkout-list">
                 {items.map(({ _id, name }) => (
@@ -77,7 +81,14 @@ class CheckoutModal extends Component {
                 ))}
               </TransitionGroup>
             </ListGroup>
-            Shipping Address
+            <Container>
+              Shipping Address
+              <Container>{user.streetAddress}</Container>
+              <Container>{user.cityAddress}</Container>
+              <Container>{user.stateAddress}</Container>
+              <Container>{user.zipCode}</Container>
+            </Container>
+
           </ModalBody>
         </Modal>
       </Container>
